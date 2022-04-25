@@ -3,7 +3,7 @@
   --secondary-blue: #4dbfd9;
   --primary-gray: rgb(105, 105, 105);
   --light-gray: #e5e5e5;
-  --pimary-yellow: #fffb07;
+  --primary-yellow: #fffb07;
   --primary-orange: #f76e12;
 }
 
@@ -155,7 +155,8 @@ main {
   cursor: pointer;
   overflow: hidden;
   border-color: transparent;
-  /* transition-duration: 0.4s; */
+  transition: ease-in-out all;
+  transition-duration: 0.4s;
 }
 
 .btn-primary {
@@ -173,8 +174,8 @@ main {
   color: whitesmoke;
   background-color: var(--primary-orange);
   border-color: transparent;
-
-  transition: ease-out 0.6s;
+  box-shadow: 2px 2px 4px rgba(126, 125, 125, 0.5);
+  /* transition: ease-out 0.6s; */
 }
 
 .btn-white {
@@ -421,7 +422,7 @@ strong {
   border-image: linear-gradient(
     to right bottom,
     var(--primary-orange) 10%,
-    var(--pimary-yellow) 50%,
+    var(--primary-yellow) 50%,
     var(--primary-blue) 50%
   ); /* gradient with required colors */
   border-image-slice: 2;
@@ -433,7 +434,7 @@ strong {
   }
   100% {
     border: 10px solid var(--primary-orange);
-    /* border: 15px solid var(--pimary-yellow); */
+    /* border: 15px solid var(--primary-yellow); */
   }
 }
 
@@ -525,11 +526,11 @@ textarea {
 }
 
 .form-control:focus {
-  border-color: var(--primary-blue);
+  /* border-color: var(--primary-blue); */
   border-radius: none;
-  border: 1px solid;
+  border: 1px solid transparent;
   box-shadow: 2px 3px 2px rgba(126, 125, 125, 0.5);
-  outline: 1px solid transparent;
+  outline: 1px solid var(--primary-blue);
 }
 
 input {
