@@ -7,6 +7,27 @@
   --primary-orange: #f76e12;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--primary-blue);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--primary-orange);
+
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -82,12 +103,38 @@ a {
   color: white;
   text-decoration: none;
 }
-.container nav ul a {
-  gap: 10%;
+
+nav ul a {
+  /* gap: 10%; */
+  position: relative;
+  padding: 8px 12px;
   min-width: 50px;
   display: block;
   font-size: 16px;
   font-weight: 500;
+  z-index: 0;
+}
+
+li a:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-orange);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.active::before {
+  transform: scale(1);
+}
+
+li a:hover:before,
+li a:focus:before {
+  transform: scale(1);
 }
 
 .container nav {
@@ -258,9 +305,6 @@ strong {
   /* margin: 0; */
 }
 
-#skills {
-  margin-bottom: 10px;
-}
 .skill {
   display: block;
   position: relative;
@@ -548,6 +592,16 @@ input {
   justify-content: flex-end;
 }
 
+.t-message {
+  margin: 10px 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: white;
+  background-color: green;
+  display: none;
+}
+
 /* responsive */
 @media only screen and (max-width: 800px) {
   p {
@@ -585,5 +639,10 @@ input {
 
   .d-grid {
     grid-template-columns: 1fr;
+  }
+
+  .map > div {
+    width: 80%;
+    margin: auto;
   }
 }

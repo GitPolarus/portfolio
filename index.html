@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/icon_ablam.jpg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,13 +17,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
 
-    <title>My Portfolio</title>
+    <title>Ablam</title>
   </head>
   <body>
     <header>
       <div class="topheader-info">
         <div class="logo">
-          <img src="img/hablam_rect.png" alt="logo" />
+          <a href="#"><img src="img/hablam_rect.png" alt="logo" /></a>
         </div>
         <div>
           <a href="mailto:ezianhippolyte@gmail.com">
@@ -58,16 +59,32 @@
               <img src="img/ablam_profil.jpg" alt="profil" width="100%" />
             </div>
             <h2>I am Ablam Hippolyte EZIAN</h2>
-            <h4>Software Engineer, Coach, Photographer</h4>
+            <h4>
+              Software Engineer, Coach in Web full stack developpement,
+              Photographer
+            </h4>
             <div class="social">
-              <i class="fa-brands fa-twitter-square"></i>
-              <i class="fa-brands fa-facebook-square"></i>
-              <i class="fa-brands fa-linkedin"></i>
-              <i class="fa-brands fa-instagram-square"></i>
-              <i class="fa-brands fa-github-square"></i>
+              <a
+                href="https://web.facebook.com/hippolyte.ezian/"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-square"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/ezian-hippolyte-71b40817a/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/h_ablam/?hl=fr" target="_blank"
+                ><i class="fa-brands fa-instagram-square"></i
+              ></a>
+              <a href="https://github.com/GitPolarus" target="_blank"
+                ><i class="fa-brands fa-github-square"></i
+              ></a>
             </div>
             <div class="btn-group">
-              <button class="btn btn-default">Hire Me</button>
+              <a href="#contact"
+                ><button class="btn btn-default">Hire Me</button></a
+              >
               <button class="btn btn-primary">Download CV</button>
             </div>
           </div>
@@ -91,10 +108,12 @@
               <h3 class="panel-title">Basic Information</h3>
               <div>
                 <ul>
-                  <li><strong>Adress:</strong> Mohammedia Morocco</li>
+                  <li>
+                    <strong>Adress:</strong> Riad salam Mohammedia Morocco
+                  </li>
                   <li><strong>Date of Birth:</strong> 13 August 1996</li>
                   <li>
-                    <strong>Language:</strong> Ewe, French, English Darija
+                    <strong>Language:</strong> Ewe, French, English, Darija
                   </li>
                 </ul>
               </div>
@@ -289,7 +308,7 @@
               <ul>
                 <li>
                   <h5>Adress</h5>
-                  <p>mon adress</p>
+                  <p>Riad salam Mohammedia Morocco</p>
                 </li>
                 <li>
                   <h5>Phone</h5>
@@ -305,21 +324,37 @@
 
           <div class="contact-form">
             <div class="panel-title">Feel Free To Contact Me</div>
-            <form action="" method="get">
+            <div class="row t-message">Thank you for the message!</div>
+            <form id="contact-form">
+              <input type="hidden" name="contact_number" />
               <div class="row gap-5">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    name="user_name"
+                    required
+                  />
                   <input
                     type="email"
                     class="form-control"
                     placeholder="Email"
+                    name="user_email"
+                    required
                   />
-                  <input type="text" class="form-control" placeholder="Phone" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Phone"
+                    name="user_phone"
+                  />
                 </div>
                 <div class="col">
                   <textarea
                     class="form-control"
                     placeholder="Message"
+                    name="message"
                   ></textarea>
                 </div>
               </div>
@@ -337,6 +372,18 @@
         <div class="chevron"></div>
       </div>
     </a>
-    <footer class="center">Copyright&copy;Ablam Hippolyte EZIAN</footer>
+    <footer class="center">Copyright&copy; 2022 Ablam Hippolyte EZIAN</footer>
+
+    <!-- script js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("g-8ZNZKRET52LVADf");
+      })();
+    </script>
+    <script src="js/script.js" type="text/javascript"></script>
   </body>
 </html>
