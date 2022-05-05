@@ -24,6 +24,8 @@ window.addEventListener("scroll", (e) => {
   });
   // console.log(current);
   // window.location.hash = `#${current}`;
+  location.hash.replace(`#${current}`);
+
   setActiveOnClick(`#${current}`);
 });
 
@@ -31,7 +33,6 @@ function setActiveOnClick(hash = location.hash) {
   navLinks.forEach((element) => {
     if (element.hash == hash) {
       element.classList.add("active");
-      location.hash.replace(hash);
     } else {
       element.classList.remove("active");
     }
